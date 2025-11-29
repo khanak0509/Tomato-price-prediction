@@ -1,0 +1,10 @@
+{
+  "model_name": "XGBoost Tomato Price Predictor",
+  "training_date": "2025-11-28T07:17:03.947889",
+  "test_mae": 14.551962106088396,
+  "test_mape": 0.7044839132341829,
+  "test_accuracy": 99.29551608676582,
+  "train_samples": 25935,
+  "test_samples": 2008,
+  "num_features": 40
+}
