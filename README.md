@@ -571,9 +571,5 @@ Database Query Time: ~50ms
 Model Inference Time: ~30ms
 ```
 
----
 
-<div align="center">
-
-**Built with ❤️ for Indian Farmers**
 
