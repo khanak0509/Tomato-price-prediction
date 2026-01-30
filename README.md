@@ -1,136 +1,128 @@
+<div align="center">
+
 # 🍅 Tomato Price Prediction System
 
-> An advanced machine learning-powered API for predicting tomato prices across 220+ APMC markets in Uttar Pradesh, India.
+### *AI-Powered Agricultural Market Intelligence for Uttar Pradesh*
 
-[![Python](https://img.shields.io/badge/Python-3.10%2B-blue)](https://www.python.org/)
-[![FastAPI](https://img.shields.io/badge/FastAPI-0.104%2B-green)](https://fastapi.tiangolo.com/)
-[![XGBoost](https://img.shields.io/badge/XGBoost-ML-orange)](https://xgboost.readthedocs.io/)
-[![MySQL](https://img.shields.io/badge/MySQL-8.0%2B-blue)](https://www.mysql.com/)
-[![Redis](https://img.shields.io/badge/Redis-Cache-red)](https://redis.io/)
+[![Python](https://img.shields.io/badge/Python-3.10+-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org/)
+[![FastAPI](https://img.shields.io/badge/FastAPI-009688?style=for-the-badge&logo=fastapi&logoColor=white)](https://fastapi.tiangolo.com/)
+[![XGBoost](https://img.shields.io/badge/XGBoost-FF6600?style=for-the-badge&logo=xgboost&logoColor=white)](https://xgboost.readthedocs.io/)
+[![MySQL](https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white)](https://www.mysql.com/)
+[![Redis](https://img.shields.io/badge/Redis-DC382D?style=for-the-badge&logo=redis&logoColor=white)](https://redis.io/)
 
----
+**99.3% Accuracy** • **220+ Markets** • **Real-time Predictions** • **Multi-horizon Forecasting**
 
-## 📋 Table of Contents
+[Quick Start](#-quick-start) • [API Docs](#-api-endpoints) • [Examples](#-usage-examples) • [Performance](#-model-performance)
 
-- [Overview](#overview)
-- [Key Features](#key-features)
-- [Tech Stack](#tech-stack)
-- [Model Performance](#model-performance)
-- [Project Structure](#project-structure)
-- [Installation](#installation)
-- [Database Setup](#database-setup)
-- [Running the API](#running-the-api)
-- [API Endpoints](#api-endpoints)
-- [Usage Examples](#usage-examples)
-- [Model Details](#model-details)
-- [Data Pipeline](#data-pipeline)
-- [Contributing](#contributing)
-- [License](#license)
+</div>
 
 ---
 
 ## 🎯 Overview
 
-This system provides **real-time tomato price predictions** for agricultural markets (APMCs) across Uttar Pradesh. Using historical price data from 2022-2025 and advanced machine learning algorithms, it forecasts future prices with **99.3% accuracy**.
+A production-ready machine learning system that predicts tomato prices across 220+ APMC markets in Uttar Pradesh with **99.3% accuracy**. Built for farmers, traders, and policymakers to make data-driven decisions.
 
-### 🎪 Use Cases
+### 💡 Key Benefits
 
-- **Farmers**: Plan harvest schedules and decide optimal selling times
-- **Traders**: Make informed buying/selling decisions
-- **Government**: Monitor market trends and implement price control measures
-- **Retailers**: Optimize inventory and pricing strategies
-
----
-
-## ✨ Key Features
-
-- 🔮 **Multi-horizon Predictions**: Forecast prices from 7 to 60 days ahead
-- 📊 **220+ Markets**: Coverage across all major APMC markets in UP
-- ⚡ **Real-time API**: Fast predictions with Redis caching (< 100ms)
-- 📈 **Batch Processing**: Predict multiple markets simultaneously
-- 🎯 **High Accuracy**: 99.3% accuracy with MAE of ₹14.55/quintal
-- 🔄 **Historical Analysis**: Access 20+ weeks of historical price data
-- 🌡️ **Confidence Scores**: Each prediction includes confidence metrics
-- 📉 **Trend Analysis**: Automated trend detection (up/down)
+| For Farmers | For Traders | For Government | For Retailers |
+|------------|-------------|----------------|---------------|
+| 📅 Optimal harvest timing | 💰 Smart buying decisions | 📊 Market monitoring | 📦 Inventory optimization |
+| 💵 Better price realization | 📈 Profit maximization | 🎯 Price stabilization | 💲 Dynamic pricing |
 
 ---
 
-## 🛠️ Tech Stack
+## ✨ Features
 
-### Machine Learning
-- **XGBoost**: Primary prediction model (99.3% accuracy)
-- **Prophet**: Time series forecasting (Facebook's Prophet)
-- **LSTM**: Deep learning model for sequential patterns
-- **Scikit-learn**: Feature engineering and preprocessing
+<table>
+<tr>
+<td width="50%">
 
-### Backend
-- **FastAPI**: High-performance async REST API
-- **Python 3.10+**: Core programming language
-- **Pydantic**: Data validation and settings management
+### 🚀 Performance
+- ⚡ **< 100ms** response time
+- 🎯 **99.3%** prediction accuracy
+- 💾 Redis caching for speed
+- 🔄 Real-time data processing
 
-### Database & Cache
-- **MySQL 8.0+**: Relational database for structured data
-- **Redis**: In-memory caching for fast predictions
+</td>
+<td width="50%">
 
-### Data Science
-- **Pandas & NumPy**: Data manipulation and analysis
-- **Joblib**: Model serialization and loading
+### 🔮 Capabilities
+- 📊 **220+ markets** coverage
+- 🕐 **7-60 days** ahead forecasting
+- 📈 Batch predictions
+- 🎲 Scenario analysis
+
+</td>
+</tr>
+</table>
 
 ---
 
 ## 📊 Model Performance
 
-```
-Model: XGBoost Tomato Price Predictor
-Training Date: 2025-11-28
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-Metric                  Value
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-Test MAE               ₹14.55 per quintal
-Test MAPE              0.70%
-Test Accuracy          99.30%
-Training Samples       25,935
-Test Samples           2,008
-Number of Features     40
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-```
+<div align="center">
 
-### Feature Categories
+| Metric | Value |
+|--------|-------|
+| **Test Accuracy** | 99.30% |
+| **MAE (Mean Absolute Error)** | ₹14.55/quintal |
+| **MAPE (Mean Absolute %)** | 0.70% |
+| **Training Samples** | 25,935 |
+| **Test Samples** | 2,008 |
+| **Features** | 40 engineered features |
+| **Training Date** | Nov 28, 2025 |
 
-1. **Temporal Features**: Month, week, quarter, seasonality (sin/cos encoding)
-2. **Lag Features**: Price lags at 1, 2, 4, 8, 12 weeks
-3. **Rolling Statistics**: Moving averages, std dev, min/max (4, 8, 12 weeks)
-4. **Market Features**: Market encoding, average prices, volatility
-5. **Derived Features**: Price momentum, relative strength, growth rates
+</div>
+
+### 🧮 Feature Engineering
+
+- **Temporal**: Month, week, quarter, day-of-week, seasonality (sin/cos encoding)
+- **Lag Features**: Price history at 1, 2, 4, 8, 12 weeks intervals
+- **Rolling Stats**: Moving averages, std dev, min/max windows (4, 8, 12 weeks)
+- **Market**: Encoding, average prices, volatility metrics
+- **Derived**: Price momentum, relative strength, growth rates
 
 ---
 
-## 📁 Project Structure
+## �️ Tech Stack
+
+```mermaid
+graph LR
+    A[FastAPI] --> B[XGBoost Model]
+    A --> C[Redis Cache]
+    A --> D[MySQL DB]
+    B --> E[40 Features]
+    D --> F[15,480 Records]
+```
+
+**ML Stack**: XGBoost (primary), Prophet, LSTM | **Backend**: FastAPI + Pydantic | **Database**: MySQL 8.0 + Redis | **Data**: Pandas + NumPy + Scikit-learn
+
+---
+
+## �📁 Project Structure
 
 ```
 tomato/
-├── API.py                          # FastAPI application with endpoints
-├── healper_function.py             # Helper functions for data processing
-├── train.ipynb                     # Model training notebook
-├── insert_into_database.py         # Data ingestion script
-├── test.py                         # API testing script
+├── 🚀 API.py                       # FastAPI REST endpoints
+├── 🔧 healper_function.py          # Feature engineering & ML logic
+├── 📓 train.ipynb                  # Model training notebook
+├── 💾 insert_into_database.py      # Database population script
+├── 🧪 test.py                      # API testing utilities
+├── 📋 schema.sql                   # Database schema (MySQL)
+├── 📄 api_doc.md                   # API documentation
 │
-├── models/                         # Trained ML models
-│   ├── xgboost_tomato_model_20251128.pkl
-│   ├── prophet_varanasi_20251128.pkl
-│   ├── lstm_best_model.h5
-│   ├── feature_columns.pkl
-│   └── model_metadata.json
+├── 🤖 models/
+│   ├── xgboost_tomato_model_20251128.pkl  # Primary model (99.3%)
+│   ├── prophet_varanasi_20251128.pkl      # Time series model
+│   ├── lstm_best_model.h5                 # Deep learning model
+│   ├── feature_columns.pkl                # Feature definitions
+│   └── model_metadata.json                # Training metrics
 │
-├── data/
-│   ├── fial_tomato.csv            # Processed dataset (15,480 records)
-│   └── Tomato Dataset.csv         # Raw dataset
+├── 📊 data/
+│   ├── fial_tomato.csv            # Clean dataset (15,480 records)
+│   └── Tomato Dataset.csv         # Raw data
 │
-├── schema.sql                      # Database schema
-├── api_doc.md                      # API documentation
-├── README.md                       # This file
-│
-└── visualizations/
+└── 📈 visualizations/
     ├── feature_importance.png
     ├── prophet_forecast.png
     └── prophet_components.png
@@ -138,184 +130,73 @@ tomato/
 
 ---
 
-## 🚀 Installation
+## ⚡ Quick Start
 
 ### Prerequisites
 
-- Python 3.10 or higher
-- MySQL 8.0+
-- Redis Server
-- pip (Python package manager)
+```bash
+✓ Python 3.10+
+✓ MySQL 8.0+
+✓ Redis Server
+```
 
-### Step 1: Clone the Repository
+### 1️⃣ Clone & Setup
 
 ```bash
-git clone https://github.com/Pradyogik/Tomato-price-prediction.git
+git clone https://github.com/khanak0509/Tomato-price-prediction.git
 cd Tomato-price-prediction
-```
-
-### Step 2: Create Virtual Environment
-
-```bash
 python3 -m venv venv
-source venv/bin/activate  # On Windows: venv\Scripts\activate
+source venv/bin/activate  # Windows: venv\Scripts\activate
 ```
 
-### Step 3: Install Dependencies
+### 2️⃣ Install Dependencies
 
 ```bash
-pip install -r requirements.txt
+pip install fastapi uvicorn pandas numpy scikit-learn xgboost mysql-connector-python redis joblib pydantic
 ```
 
-**Required Packages:**
-```
-fastapi>=0.104.0
-uvicorn[standard]>=0.24.0
-pandas>=2.0.0
-numpy>=1.24.0
-scikit-learn>=1.3.0
-xgboost>=2.0.0
-mysql-connector-python>=8.0.33
-redis>=5.0.0
-joblib>=1.3.0
-pydantic>=2.0.0
-prophet>=1.1.5
-tensorflow>=2.13.0  # For LSTM model
-```
-
----
-
-## 💾 Database Setup
-
-### Step 1: Start MySQL Server
+### 3️⃣ Database Setup
 
 ```bash
-# macOS
-brew services start mysql
+# Start services
+brew services start mysql redis  # macOS
+# sudo systemctl start mysql redis  # Linux
 
-# Linux
-sudo systemctl start mysql
-
-# Windows
-net start MySQL80
-```
-
-### Step 2: Create Database and Tables
-
-```bash
+# Create database
 mysql -u root -p < schema.sql
-```
 
-This creates:
-- Database: `tomato_db`
-- Table: `tomato_prices` (main price data)
-- Table: `markets_master` (market metadata)
-
-### Step 3: Import Data
-
-```bash
+# Import data (15,480 records)
 python3 insert_into_database.py
 ```
 
-**Data Stats:**
-- Total Records: 15,480
-- Markets: 220
-- Time Range: Nov 2022 - Nov 2025
-- Missing Values: 1,634 (10.56%)
-
-### Step 4: Start Redis Server
-
-```bash
-# macOS
-brew services start redis
-
-# Linux
-sudo systemctl start redis
-
-# Windows
-redis-server
-```
-
-Verify Redis is running:
-```bash
-redis-cli ping
-# Should return: PONG
-```
-
----
-
-## ▶️ Running the API
-
-### Start the Server
+### 4️⃣ Launch API
 
 ```bash
 python3 -m uvicorn API:app --reload
 ```
 
-Or with custom host/port:
-```bash
-uvicorn API:app --host 0.0.0.0 --port 8000 --reload
-```
+🎉 **Done!** API running at `http://127.0.0.1:8000`
 
-### Verify API is Running
-
-```bash
-curl http://127.0.0.1:8000/
-```
-
-Expected response:
-```json
-{
-  "message": "Tomato Price Prediction API",
-  "version": "1.0.0",
-  "status": "active"
-}
-```
-
-### Access Interactive Docs
-
-- **Swagger UI**: http://127.0.0.1:8000/docs
-- **ReDoc**: http://127.0.0.1:8000/redoc
+**Interactive Docs**: http://127.0.0.1:8000/docs
 
 ---
 
 ## 🔌 API Endpoints
 
-### 1. Health Check
-```http
-GET /
-```
-
-### 2. Get All Markets
-```http
-POST /markets
-```
-
-### 3. Get Market History
-```http
-POST /market/history
-```
-
-### 4. Predict Price (Single Market)
-```http
-POST /predict
-```
-
-### 5. Batch Predictions
-```http
-POST /predict/batch
-```
-
-### 6. Scenario Analysis
-```http
-POST /predict/scenarios
-```
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| `GET` | `/` | Health check |
+| `POST` | `/markets` | Get all 220+ markets |
+| `POST` | `/market/history` | Historical prices (20 weeks) |
+| `POST` | `/predict` | Single market prediction |
+| `POST` | `/predict/batch` | Multiple market predictions |
+| `POST` | `/predict/scenarios` | Multi-horizon forecasts (7-60 days) |
 
 ---
 
-## 📝 Usage Examples
+## � Usage Examples
 
-### Example 1: Single Market Prediction
+### 🎯 Single Market Prediction
 
 ```bash
 curl -X POST "http://127.0.0.1:8000/predict" \
@@ -326,23 +207,26 @@ curl -X POST "http://127.0.0.1:8000/predict" \
          }'
 ```
 
-**Response:**
+<details>
+<summary>📤 Response</summary>
+
 ```json
 {
   "market_name": "Achalda APMC",
   "current_price": 2189.55,
   "current_price_date": "2025-11-09",
   "predicted_price": 2174.37,
-  "horizon_days": 7,
   "prediction_date": "2025-11-16",
+  "horizon_days": 7,
   "confidence": 0.903,
   "change_percent": -0.69,
   "trend": "down",
   "timestamp": "2025-11-28T19:54:46"
 }
 ```
+</details>
 
-### Example 2: Batch Predictions
+### 📦 Batch Predictions
 
 ```bash
 curl -X POST "http://127.0.0.1:8000/predict/batch" \
@@ -353,44 +237,15 @@ curl -X POST "http://127.0.0.1:8000/predict/batch" \
          }'
 ```
 
-### Example 3: Scenario Analysis
+### 🎲 Scenario Analysis (7, 14, 21, 30, 45, 60 days)
 
 ```bash
 curl -X POST "http://127.0.0.1:8000/predict/scenarios" \
      -H "Content-Type: application/json" \
-     -d '{
-           "market_name": "Varanasi APMC"
-         }'
+     -d '{"market_name": "Varanasi APMC"}'
 ```
 
-**Response:**
-```json
-{
-  "market_name": "Varanasi APMC",
-  "current_price": 1850.00,
-  "scenarios": [
-    {
-      "horizon_days": 7,
-      "prediction_date": "2025-12-05",
-      "predicted_price": 1823.45,
-      "confidence": 0.903,
-      "change_percent": -1.43,
-      "trend": "down"
-    },
-    {
-      "horizon_days": 14,
-      "prediction_date": "2025-12-12",
-      "predicted_price": 1795.20,
-      "confidence": 0.856,
-      "change_percent": -2.96,
-      "trend": "down"
-    }
-    // ... more scenarios
-  ]
-}
-```
-
-### Example 4: Historical Data
+### 📊 Market History
 
 ```bash
 curl -X POST "http://127.0.0.1:8000/market/history" \
@@ -401,7 +256,7 @@ curl -X POST "http://127.0.0.1:8000/market/history" \
          }'
 ```
 
-### Example 5: Get All Markets
+### 📋 List All Markets
 
 ```bash
 curl -X POST "http://127.0.0.1:8000/markets" \
@@ -411,165 +266,167 @@ curl -X POST "http://127.0.0.1:8000/markets" \
 
 ---
 
-## 🧠 Model Details
+## 🧠 How It Works
 
-### XGBoost Model (Primary)
+```
+1. 📥 Request → Market + Horizon
+2. 🔍 Fetch → Latest price from MySQL
+3. ⚙️  Engineer → 40 features from history
+4. 🤖 Predict → XGBoost inference
+5. 📊 Analyze → Confidence + Trend
+6. 💾 Cache → Redis (1 hour TTL)
+7. 📤 Response → JSON with predictions
+```
 
-**Hyperparameters:**
-- `n_estimators`: 100
-- `max_depth`: 6
-- `learning_rate`: 0.1
-- `subsample`: 0.8
-- `colsample_bytree`: 0.8
-
-**Feature Engineering:**
-- 40 engineered features
-- Temporal encoding (sin/cos for cyclical patterns)
-- Lag features (1, 2, 4, 8, 12 weeks)
-- Rolling statistics (MA, STD, MIN, MAX)
-- Market-specific features
-
-### Prophet Model (Supplementary)
-
-Used for:
-- Seasonal decomposition
-- Trend analysis
-- Holiday effects
-
-### LSTM Model (Experimental)
-
-Deep learning model for:
-- Sequential pattern recognition
-- Long-term dependencies
-- Complex non-linear relationships
+**Confidence Score**: `0.95 - (horizon_days/30 × 0.2)` (range: 0.5 - 0.99)
 
 ---
 
 ## 🔄 Data Pipeline
 
 ```
-┌─────────────────┐
-│  Raw CSV Data   │
-│  (220 markets)  │
-└────────┬────────┘
-         │
-         ▼
-┌─────────────────┐
-│ Data Cleaning   │
-│ - Handle nulls  │
-│ - Format dates  │
-└────────┬────────┘
-         │
-         ▼
-┌─────────────────┐
-│ Feature Eng.    │
-│ - Lag features  │
-│ - Rolling stats │
-│ - Seasonality   │
-└────────┬────────┘
-         │
-         ▼
-┌─────────────────┐
-│ MySQL Database  │
-│ - tomato_prices │
-└────────┬────────┘
-         │
-         ▼
-┌─────────────────┐
-│  Model Training │
-│  - XGBoost      │
-│  - Prophet      │
-│  - LSTM         │
-└────────┬────────┘
-         │
-         ▼
-┌─────────────────┐
-│   FastAPI       │
-│   + Redis       │
-│   (Production)  │
-└─────────────────┘
+┌────────────────┐
+│ Raw CSV        │ 220 markets, 2022-2025
+└───────┬────────┘
+        │
+        ▼
+┌────────────────┐
+│ Data Cleaning  │ Null handling, date formatting
+└───────┬────────┘
+        │
+        ▼
+┌────────────────┐
+│ Feature Eng    │ Lag, rolling, temporal features
+└───────┬────────┘
+        │
+        ▼
+┌────────────────┐
+│ MySQL DB       │ 15,480 records indexed
+└───────┬────────┘
+        │
+        ▼
+┌────────────────┐
+│ Model Training │ XGBoost + Prophet + LSTM
+└───────┬────────┘
+        │
+        ▼
+┌────────────────┐
+│ FastAPI + Redis│ Production API with caching
+└────────────────┘
 ```
 
 ---
 
-## 🎯 Prediction Logic
+## ⚙️ Configuration
 
-1. **Fetch Latest Data**: Get most recent price for the market
-2. **Feature Preparation**: Generate 40 features based on historical data
-3. **Model Inference**: XGBoost prediction
-4. **Confidence Calculation**: Based on prediction horizon
-5. **Trend Analysis**: Compare with current price
-6. **Cache Result**: Store in Redis for 1 hour
+**Database** (`API.py` & `healper_function.py`):
+```python
+mysql.connector.connect(
+    host="localhost",
+    user="root",
+    password="1234",
+    database="tomato_db"
+)
+```
 
----
-
-## 📈 Future Enhancements
-
-- [ ] Add weather data integration
-- [ ] Implement multi-variate predictions
-- [ ] Add state-wide price correlations
-- [ ] Real-time data ingestion pipeline
-- [ ] Mobile app for farmers
-- [ ] SMS/WhatsApp notifications
-- [ ] Supply-demand forecasting
-- [ ] Seasonal crop advisory
+**Cache** (`API.py`):
+```python
+redis.Redis(host='localhost', port=6379, db=0)
+CACHE_TTL = 3600  # 1 hour
+```
 
 ---
 
 ## 🐛 Troubleshooting
 
-### API Not Starting
+<details>
+<summary>❌ API won't start</summary>
 
 ```bash
-# Check if port 8000 is in use
-lsof -i :8000
-
-# Kill existing process
-kill -9 <PID>
+lsof -i :8000          # Check port
+kill -9 <PID>          # Kill process
 ```
+</details>
 
-### Redis Connection Error
+<details>
+<summary>❌ Redis connection failed</summary>
 
 ```bash
-# Check Redis status
-redis-cli ping
-
-# Restart Redis
-brew services restart redis  # macOS
-sudo systemctl restart redis # Linux
+redis-cli ping         # Should return PONG
+brew services restart redis
+redis-cli FLUSHDB      # Clear cache
 ```
+</details>
 
-### MySQL Connection Error
+<details>
+<summary>❌ MySQL connection error</summary>
 
 ```bash
-# Verify MySQL is running
 mysql -u root -p -e "SHOW DATABASES;"
-
-# Check credentials in API.py
+# Verify credentials in API.py and healper_function.py
 ```
+</details>
 
-### Cache Not Clearing
+---
 
-```bash
-# Flush Redis cache
-redis-cli FLUSHDB
+## 📈 Performance Metrics
 
-# Or flush all databases
-redis-cli FLUSHALL
-```
+| Metric | Value |
+|--------|-------|
+| Avg Response Time | < 100ms (cached) |
+| Cache Hit Rate | ~85% |
+| Throughput | 100 req/sec |
+| Uptime | 99.9% |
+| DB Query Time | ~50ms |
+| Model Inference | ~30ms |
 
+---
 
+## 🎯 Dataset
 
-## 📊 API Performance Metrics
+- **Source**: Agmarknet (Government of India)
+- **Total Records**: 15,480
+- **Markets**: 220 APMCs across Uttar Pradesh
+- **Time Range**: November 2022 - November 2025
+- **Missing Values**: 1,634 (10.56%) - handled as null
+- **Update Frequency**: Weekly
 
-```
-Average Response Time: < 100ms (with cache)
-Cache Hit Rate: ~85%
-Concurrent Requests: Up to 100/sec
-Uptime: 99.9%
-Database Query Time: ~50ms
-Model Inference Time: ~30ms
-```
+---
+
+## 🔮 Roadmap
+
+- [ ] 🌦️ Weather data integration
+- [ ] 🗺️ State-wide price correlations
+- [ ] 📲 Mobile app for farmers
+- [ ] 💬 WhatsApp/SMS notifications
+- [ ] 📊 Supply-demand forecasting
+- [ ] 🌾 Multi-crop support
+- [ ] � Real-time data pipeline
+- [ ] 🤖 Automated retraining
+
+---
+
+## 📄 License
+
+MIT License - Free for commercial and personal use
+
+---
+
+<div align="center">
+
+### 🙏 Acknowledgments
+
+**Data**: Agmarknet (GoI) • **Models**: XGBoost, Prophet, TensorFlow • **Infrastructure**: FastAPI, MySQL, Redis
+
+---
+
+**Built with ❤️ for Indian Farmers**
+
+⭐ **Star this repo if it helps you!** ⭐
+
+[Report Bug](https://github.com/khanak0509/Tomato-price-prediction/issues) • [Request Feature](https://github.com/khanak0509/Tomato-price-prediction/issues)
+
+</div>
 
 
 
